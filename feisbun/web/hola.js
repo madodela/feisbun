@@ -4,3 +4,6 @@
  */
 
 
+$(function(){
+  alert("HOLA!")
+});
