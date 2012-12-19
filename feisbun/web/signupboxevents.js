@@ -15,11 +15,10 @@ $(function(){
                 $(".emailmismatch").fadeOut();
             }
             if( ($("#username").data("default") == 1) || ($("#username").val() == "")){
-                debugger
                 $(".emptyfield").fadeIn();
                 return false;
             }
-            emailRegEx = /^[a-zA-Z][a-zA-Z0-9]*[.][a-zA-Z0-9]*@{1}feisbun[.]com/
+            emailRegEx = /^[a-zA-Z][a-zA-Z0-9]*[.]?[a-zA-Z0-9]*@{1}feisbun[.]com/
             email = $("#email").val();
             if( !emailRegEx.test(email) ){
                 $(".invalidemail").fadeIn();
