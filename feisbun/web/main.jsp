@@ -42,6 +42,22 @@
                 </table>
             </div>
         </div>
+        <%
+        String usuario = (String)session.getAttribute("fullname");
+            dbConn.Consult("SELECT * FROM users WHERE username='"+usuario+"'");
+            String admin = dbConn.rs.getString("administrator");
+            if(admin.compareTo("1")==0){
+        %>
+        <div class="barraAdmin">
+            <table>
+                <tr>
+                    <td><a href="j_altas.jsp">Dar de alta un usuario</a></td><td>         </td>
+                    <td><a href="j_bajas.jsp">Dar de baja un usuario</a></td><td>         </td>
+                    <td><a href="j_cambios.jsp">Cambiar datos</a></td>
+                </tr>
+            </table>
+        </div>
+        <%}%>
         <div style="height:60px;"></div>
         <div class="page">
             <div class="requests">
