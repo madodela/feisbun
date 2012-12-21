@@ -42,6 +42,12 @@
                 </table>
             </div>
         </div>
+        <%
+        String usuario = (String)session.getAttribute("fullname");
+            dbConn.Consult("SELECT * FROM users WHERE username='"+usuario+"'");
+            String admin = dbConn.rs.getString("administrator");
+            if(admin.compareTo("1")==0){
+        %>
         <div class="barraAdmin">
             <table>
                 <tr>
@@ -51,6 +57,7 @@
                 </tr>
             </table>
         </div>
+        <%}%>
         <div style="height:60px;"></div>
         <div class="page">
             <div class="requests">
