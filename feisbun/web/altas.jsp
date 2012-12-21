@@ -39,9 +39,9 @@
         <div class="barraAdmin">
             <table>
                 <tr>
-                    <td><a href="j_altas.jsp">Dar de alta un usuario</a></td><td>         </td>
-                    <td><a href="j_bajas.jsp">Dar de baja un usuario</a></td><td>         </td>
-                    <td><a href="j_cambios.jsp">Cambiar datos</a></td>
+                    <td><a href="altas.jsp">Dar de alta un usuario</a></td><td>         </td>
+                    <td><a href="bajas.jsp">Dar de baja un usuario</a></td><td>         </td>
+                    <td><a href="cambios.jsp">Cambiar datos</a></td>
                     <td><a href="main.jsp">Inicio</a></td>
                 </tr>
             </table>
