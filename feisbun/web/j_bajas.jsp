@@ -9,9 +9,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<<<<<<< HEAD
         <title>Feisbun|Bajas</title>
     </head>
     <body>
         <h1>Paginas para dar de baja algun usuario</h1>
+=======
+        <title>Feisbun ::: Bajas</title>
+    </head>
+    <body>
+        <h1>Se supone que aqui van a dar de baja xD</h1>
+>>>>>>> peverell92/master
     </body>
 </html>
