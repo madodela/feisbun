@@ -24,15 +24,12 @@ public class MySqlConn {
 
     public void Connect() {
         //Conectar con mysql...
-        String connectionUrl = "";
+        String connectionUrl;
+        connectionUrl = "";
         try {
             Class.forName("com.mysql.jdbc.Driver");
             //connectionUrl = "jdbc:mysql://localhost/demo?user=root&password=root";
-<<<<<<< HEAD
             connectionUrl = "jdbc:mysql://localhost/feisbun?user=omar&password=garcia";
-=======
-            connectionUrl = "jdbc:mysql://localhost/feisbun?user=root&password=holahola";
->>>>>>> cf48d40d81b2be41df1136b76fb1e6e069e19bb3
             conn = DriverManager.getConnection(connectionUrl);
         } catch (SQLException e) {
             System.out.println("SQL Exception: " + e.toString());

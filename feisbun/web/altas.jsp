@@ -37,18 +37,15 @@
             </div>
         </div>
         <div class="barraAdmin">
-            <table>
-                <tr>
-                    <td><a href="altas.jsp">Dar de alta un usuario</a></td><td>         </td>
-                    <td><a href="bajas.jsp">Dar de baja un usuario</a></td><td>         </td>
-<<<<<<< HEAD:feisbun/web/altas.jsp
-                    <td><a href="cambios.jsp">Cambiar datos</a></td>
-=======
-                    <td><a href="j_cambios.jsp">Cambiar datos</a></td>
->>>>>>> cf48d40d81b2be41df1136b76fb1e6e069e19bb3:feisbun/web/altas.jsp
-                    <td><a href="main.jsp">Inicio</a></td>
-                </tr>
-            </table>
+            <div class="adminContainer">
+                <table>
+                    <tr>
+                        <td><a href="altas.jsp">Dar de alta un usuario</a></td>
+                        <td><a href="bajas.jsp">Dar de baja un usuario</a></td>
+                        <td><a href="cambios.jsp">Cambiar datos</a></td>
+                    </tr>
+                </table>
+            </div>
         </div>
         <div class="content">
             <div class="container">

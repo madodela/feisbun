@@ -145,3 +145,7 @@ body{
 .contact-entry img{
     margin-left: 10px;
 }
+.adminContainer{
+    width: 900px;
+    margin: 0 auto 0 auto;
+}
