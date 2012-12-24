@@ -53,7 +53,11 @@
                 <tr>
                     <td><a href="altas.jsp">Dar de alta un usuario</a></td><td>         </td>
                     <td><a href="bajas.jsp">Dar de baja un usuario</a></td><td>         </td>
+<<<<<<< HEAD
                     <td><a href="cambios.jsp">Cambiar datos</a></td>
+=======
+                    <td><a href="j_cambios.jsp">Cambiar datos</a></td>
+>>>>>>> cf48d40d81b2be41df1136b76fb1e6e069e19bb3
                 </tr>
             </table>
         </div>

@@ -1,5 +1,5 @@
 <%-- 
-    Document   : j_altas
+    Document   : altas
     Created on : 20-dic-2012, 21:41:27
     Author     : Loli
 --%>
@@ -41,7 +41,11 @@
                 <tr>
                     <td><a href="altas.jsp">Dar de alta un usuario</a></td><td>         </td>
                     <td><a href="bajas.jsp">Dar de baja un usuario</a></td><td>         </td>
+<<<<<<< HEAD:feisbun/web/altas.jsp
                     <td><a href="cambios.jsp">Cambiar datos</a></td>
+=======
+                    <td><a href="j_cambios.jsp">Cambiar datos</a></td>
+>>>>>>> cf48d40d81b2be41df1136b76fb1e6e069e19bb3:feisbun/web/altas.jsp
                     <td><a href="main.jsp">Inicio</a></td>
                 </tr>
             </table>
@@ -110,7 +114,7 @@
                                         <li><input type="text" id="address_state" name="address-state" class="inputbox signupbox" data-default="1">
                                         <li><input type="text" id="school" name="school" class="inputbox signupbox" data-default="1">
                                         <li><span>
-                                                <p>Generación</p>
+                                                <br>Generación
                                                 <select name="school-generation" data-default="0">
                                                     <% for (int i = 1970; i <= 2013; i++) {%>
                                                     <option value="<%=i%>"><%=i%></option>
@@ -119,7 +123,7 @@
                                             </span>
                                         <li><input type="text" id="school-degree" name="school-degree" class="inputbox signupbox" data-default="1">
                                         <li><span>
-                                                <p>Area dentro de Feisbun,INC</p>
+                                                <br>Area dentro de Feisbun,INC
                                                 <select name="area" data-default="0">
                                                     <option value="Direccion General">Direccion General</option>
                                                     <option value="Contabilidad">Contabilidad</option>
