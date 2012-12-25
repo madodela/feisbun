@@ -19,7 +19,9 @@ $(function(){
             $(".change-form").delay(500).fadeToggle("slow")
         }
         formvisible = true
-        
+        $("#username").val(username)
+        $("#email").val(email)
+        $("#reemail").val(email)
     })
     $(".signup-form").on("submit",function(){
         
