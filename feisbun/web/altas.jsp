@@ -47,13 +47,13 @@
                 </table>
             </div>
         </div>
+        <div style="height:100px;"></div>
         <div class="content">
             <div class="container">
                 <div class="slogan floatingblock">
                     <p>Altas de usuarios</p>
                 </div>
                 <div class="sign-up-form floatingblock">
-
                     <div class="error-messages">
                         <%if (request.getParameter("db-error") != null) {%>
                         <p class="errordb"><%=request.getParameter("db-error")%></p>
@@ -62,7 +62,7 @@
                         <p class="error emptyfield">Hay uno o varios cuadros sin llenar</p>
                         <p class="error invalidemail">El email es invalido. Debe de terminar en <em>@feisbun.com</em></p>
                     </div>
-                    <form action="j_addNewUser.jsp" method="post">
+                    <form action="j_addNewUser.jsp" method="post" class="signup-form">
                         <table><tr><td>
                                     <ul>
                                         <li><input type="text" id="username" name="username" class="inputbox signupbox" data-default="1">

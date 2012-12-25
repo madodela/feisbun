@@ -1,0 +1,76 @@
+/* 
+    Document   : cambios
+    Created on : Dec 24, 2012, 4:15:32 PM
+    Author     : Omar
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+body{
+    font-family: "Helvetica Neue",Arial,sans-serif;
+}
+.navbar{
+    width: 101%;
+    height: 60px;
+    position: fixed;
+    margin: -8px;
+    background-color: #3B5998;
+    z-index: 1;
+}
+.navbar a:link, a:visited, a:hover, a:active{
+    color: white;
+    text-decoration: none;
+}
+.navbar-container{
+    width: 900px;
+    margin: 0 auto 0 auto;
+}
+.imagelogo{
+    background-image: url("../images/feisbun-logo.png");
+    width: 111px;
+    height: 50px;
+    margin-right: 300px;
+}
+.user-listing{
+    width: 400px;
+    margin: 0 auto 0 auto;
+}
+.user-display{
+    width: 250px;
+    height: 50px;
+    margin: 0 auto 10px auto;
+    background-color: #3B5998;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    position: relative;
+    right: 0px;
+}
+.user-name{
+    text-align: left;
+    color: white;
+    font-weight: 600;
+}
+.user-display:hover{
+    background-color: #b0bcd5;
+}
+.user-display:hover .user-name{
+    color: darkslategrey;
+}
+.user-form{
+    color: black;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+.sign-up-form ul{
+    list-style-type: none;
+}
+.change-form{
+    width: 600px;
+    position: relative;
+    top: -490px;
+    left: 450px;
+}

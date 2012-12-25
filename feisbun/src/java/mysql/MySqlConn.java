@@ -258,6 +258,19 @@ public class MySqlConn {
         return r;
     }
     
+    public void getUsers(){
+        PreparedStatement ps = null;
+        rs = null;
+        initConnection();
+        try{
+            ps = conn.prepareStatement("SELECT username,email FROM users");
+            rs = ps.executeQuery();
+            rs.beforeFirst();
+        }catch(SQLException ex){
+            printErrors(ex);
+        }
+    }
+    
     public void Consult(String query) {
         initConnection();
         //consulta...

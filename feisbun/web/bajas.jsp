@@ -10,36 +10,35 @@
 
 <%
     //Recoger los datos de la base de datos para construir la matriz
-    int n=0;
+    int n = 0;
     String query = "select id,username,email,school,area from users where `id` != '1';";
     dbConn.Consult(query);
-    
+
     //Vemos si hubo resultados y contamos cuantos hubo
-    if(dbConn.rs != null){
-        try{
+    if (dbConn.rs != null) {
+        try {
             dbConn.rs.last();
             n = dbConn.rs.getRow();
             dbConn.rs.first();
-        }
-        catch(Exception e){
+        } catch (Exception e) {
         }
     }
-    
+
     //Construimos matriz con los resultados obtenidos
-    String [][] matriz = new String[n][5];
-    
+    String[][] matriz = new String[n][5];
+
     //guarda en la matriz los datos de la base de datos          
     int i = 0;
     int index = 0;
-    do{
+    do {
         matriz[i][0] = dbConn.rs.getString("id");
         matriz[i][1] = dbConn.rs.getString("username");
         matriz[i][2] = dbConn.rs.getString("email");
         matriz[i][3] = dbConn.rs.getString("school");
         matriz[i][4] = dbConn.rs.getString("area");
         i++;
-    }while(dbConn.rs.next());
-    
+    } while (dbConn.rs.next());
+
     dbConn.desConnect();
 %>
 
@@ -84,12 +83,13 @@
                 </table>
             </div>
         </div>
+        <div style="height:100px;"></div>
         <div class="content">
             <div class="container">
                 <div class="slogan floatingblock">
                     <p>Bajas de usuarios</p>
                 </div>
-                
+
                 <div class="sign-up-form floatingblock bajas-box">
                     <div class="error-messages">
                         <%if (request.getParameter("db-error") != null) {%>
@@ -99,25 +99,25 @@
                         <p class="error emptyfield">Hay uno o varios cuadros sin llenar</p>
                         <p class="error invalidemail">El email es invalido. Debe de terminar en <em>@feisbun.com</em></p>
                     </div>
-                        <br><br>
-                    <%for(int x=0; x<n; x++){
-                        out.print("<br><br><table border=\"5\" width=\"100%\"><tr>");
-                        out.print("<td>Usuario: " + matriz[x][1] + "</td>");
-                        out.print("<td>e-mail: " + matriz[x][2] + "</td></tr>");
-                        out.print("<tr><td>Escuela: " + matriz[x][3] + "</td>");
-                        out.print("<td>Area: " + matriz[x][4] + "</td></tr>");
-                        out.print("<tr><td colspan=\"2\">"); %>
-                            <form action="j_deleteUser.jsp" method="post">
-                                <%out.print("<input type=\"hidden\" name=\"identif\" value=\"" + 
-                                        matriz[x][0] + "\">");%>
-                            <input type="submit" value="Dar de baja"></form>
-                     <%   out.print("</td></tr>");
-                     }%>
-                    
+                    <br><br>
+                    <%for (int x = 0; x < n; x++) {
+                            out.print("<br><br><table border=\"5\" width=\"100%\"><tr>");
+                            out.print("<td>Usuario: " + matriz[x][1] + "</td>");
+                            out.print("<td>e-mail: " + matriz[x][2] + "</td></tr>");
+                            out.print("<tr><td>Escuela: " + matriz[x][3] + "</td>");
+                            out.print("<td>Area: " + matriz[x][4] + "</td></tr>");
+                            out.print("<tr><td colspan=\"2\">");%>
+                    <form action="j_deleteUser.jsp" method="post">
+                        <%out.print("<input type=\"hidden\" name=\"identif\" value=\""
+                                            + matriz[x][0] + "\">");%>
+                        <input type="submit" value="Dar de baja"></form>
+                        <%   out.print("</td></tr>");
+                         }%>
+
                 </div>
-                
+
             </div>
         </div>
-                                                
+
     </body>
 </html>
