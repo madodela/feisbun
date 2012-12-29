@@ -130,6 +130,6 @@
     </body>
 </html>
 <%} else {%>
-<jsp:forward page ='index.jsp'/>              
+<script type="text/javascript">window.location.replace("index.jsp")</script>
 <%}
     }%>

@@ -4,7 +4,7 @@ $(function(){
         if($("#comment-textarea").val().length > 0){
             return true
         }else{
-            $(".emptybox-notif").fadeIn()
+            $(".emptybox-notif").fadeIn("slow")
             return false
         }
     })
