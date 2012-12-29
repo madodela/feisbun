@@ -47,6 +47,9 @@
                     <center><h2>!Registrate!</h2></center>
                     <center><h3>!Es gratis!</h3></center>
                     <div class="error-messages">
+                        <%if(request.getParameter("error") != null){
+                            out.println("<p>" + request.getParameter("error"));
+                        }%>
                         <%if(request.getParameter("db-error") != null){%>
                         <p class="errordb"><%=request.getParameter("db-error")%></p>
                         <%}%>

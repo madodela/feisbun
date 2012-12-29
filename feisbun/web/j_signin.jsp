@@ -17,7 +17,7 @@
         session.setAttribute("fullname", dbConn.rs.getString("username"));
         dbConn.markOnline(email);%>
 <jsp:forward page="main.jsp"></jsp:forward>
-<%  }else{ %>
+<% }else{ %>
 <jsp:forward page="index.jsp">
     <jsp:param name="db-error" value="Usuario o contraseña no validos"></jsp:param>
 </jsp:forward>
