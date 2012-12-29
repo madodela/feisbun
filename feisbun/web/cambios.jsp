@@ -7,20 +7,16 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="dbConn" class="mysql.MySqlConn"/>
 <%--------------------------  Validaciones  ----------------------------------%>
-<%if(session.getAttribute("username")==null){
+<%if (session.getAttribute("username") == null) {
 %>
 <jsp:forward page="index.jsp">
     <jsp:param name="error" value="Debe identificarse para entrar"/>
 </jsp:forward>
-<%}else{
-    String correo = (String)session.getAttribute("username");
-    if(!correo.equals("admin@admin.com")){
-        session.invalidate(); %>
-        <jsp:forward page="index.jsp">
-            <jsp:param name="error" value="Intentó acceder a página restringida"/>
-        </jsp:forward>
-    <%}
-}%>
+<%} else {
+    String usuario = (String) session.getAttribute("fullname");
+    dbConn.Consult("SELECT * FROM users WHERE username='" + usuario + "'");
+    String admin = dbConn.rs.getString("administrator");
+    if (admin.compareTo("1") == 0) {%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -172,3 +168,7 @@
         </div>
     </body>
 </html>
+<%} else {%>
+<jsp:forward page ='index.jsp'/>              
+<%}
+    }%>
