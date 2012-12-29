@@ -7,20 +7,17 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <jsp:useBean id="dbConn" class="mysql.MySqlConn"/>
 <%--------------------------  Validaciones  ----------------------------------%>
-<%if(session.getAttribute("username")==null){
+<%if (session.getAttribute("username") == null) {
 %>
 <jsp:forward page="index.jsp">
     <jsp:param name="error" value="Debe identificarse para entrar"/>
 </jsp:forward>
-<%}else{
-    String correo = (String)session.getAttribute("username");
-    if(!correo.equals("admin@admin.com")){
-        session.invalidate(); %>
-        <jsp:forward page="index.jsp">
-            <jsp:param name="error" value="Intentó acceder a página restringida"/>
-        </jsp:forward>
-    <%}
-}%>
+<%} else {
+    String usuario = (String) session.getAttribute("fullname");
+    dbConn.Consult("SELECT * FROM users WHERE username='" + usuario + "'");
+    String admin = dbConn.rs.getString("administrator");
+    if (admin.compareTo("1") == 0) {%> 
+
 <!DOCTYPE html>
 
 <%
@@ -104,7 +101,6 @@
                 <div class="slogan floatingblock">
                     <p>Bajas de usuarios</p>
                 </div>
-
                 <div class="sign-up-form floatingblock bajas-box">
                     <div class="error-messages">
                         <%if (request.getParameter("db-error") != null) {%>
@@ -124,15 +120,16 @@
                             out.print("<tr><td colspan=\"2\">");%>
                     <form action="j_deleteUser.jsp" method="post">
                         <%out.print("<input type=\"hidden\" name=\"identif\" value=\""
-                                            + matriz[x][0] + "\">");%>
+                                    + matriz[x][0] + "\">");%>
                         <input type="submit" value="Dar de baja"></form>
                         <%   out.print("</td></tr>");
-                         }%>
-
+                            }%>
                 </div>
-
             </div>
         </div>
-
     </body>
 </html>
+<%} else {%>
+<jsp:forward page ='index.jsp'/>              
+<%}
+    }%>
